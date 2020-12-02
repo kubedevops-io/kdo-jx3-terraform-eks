@@ -4,24 +4,25 @@
 variable "region" {
   description = "AWS region code for creating resources."
   type = string
+  default = "eu-west-1"
 }
 
 variable "cluster_version" {
   description = "Kubernetes version to use for the EKS cluster."
   type        = string
-  default     = "1.17"
+  default     = "1.18"
 }
 
 variable "vault_user" {
   description = "The AWS IAM Username whose credentials will be used to authenticate the Vault pods against AWS"
   type        = string
-  default     = ""
+  default     = "sergiu"
 }
 
 variable "cluster_name" {
   description = "Name of the Kubernetes cluster to create"
   type        = string
-  default     = ""
+  default     = "jx"
 }
 
 variable "force_destroy" {
@@ -39,14 +40,17 @@ variable "is_jx2" {
 variable "jx_git_url" {
   description = "URL for the Jenins X cluster git repository"
   type        = string
+  default    = "https://github.com/kubedevops-io/kdo-jx3-eks-vault.git"
 }
 
 variable "jx_bot_username" {
   description = "Bot username used to interact with the Jenkins X cluster git repository"
   type        = string
+  default.    = "kdo-bot"
 }
 
 variable "jx_bot_token" {
   description = "Bot token used to interact with the Jenkins X cluster git repository"
   type        = string
+  default     = "838b4ae0c81cb7dfc446627dae5c5baac3899ac3"
 }
